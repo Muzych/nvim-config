@@ -16,6 +16,7 @@ require("lazy").setup({
 	"williamboman/mason.nvim",
 	"williamboman/mason-lspconfig.nvim",
 	"neovim/nvim-lspconfig",
+
     -- color scheme
     {
         "folke/tokyonight.nvim",
@@ -31,5 +32,21 @@ require("lazy").setup({
     },
     {
         'nvim-lualine/lualine.nvim', dependencies = { 'nvim-tree/nvim-web-devicons' }
-    }
+    },
+    {
+        'nvim-telescope/telescope.nvim' , dependencies = { 'nvim-lua/plenary.nvim' } 
+    },
+    {
+        "nvim-treesitter/nvim-treesitter", 
+        build = ":TSUpdate",
+        config = function ()
+            local configs = require("nvim-treesitter.configs")
+            configs.setup({
+                ensure_installed = {"c", "lua", "typescript", "javascript", "python", "html", "css", "cpp", "vim", "vimdoc"},
+                sync_install = false,
+                highlight = { enable = true },
+                indent = { enable = true },
+            })
+        end
+    },
 })
