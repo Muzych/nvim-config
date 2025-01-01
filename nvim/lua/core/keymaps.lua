@@ -16,7 +16,7 @@ keymap.set("n", "<C-h>", ":BufferLineCyclePrev<CR>")
 keymap.set("n", "<C-l>", ":BufferLineCycleNext<CR>")
 -- 关闭
 --"moll/vim-bbye"
-keymap.set("n", "<C-w>", ":Bdelete!<CR>")
+keymap.set("n", "bd", ":Bdelete!<CR>")
 keymap.set("n", "<leader>bl", ":BufferLineCloseRight<CR>")
 keymap.set("n", "<leader>bh", ":BufferLineCloseLeft<CR>")
 keymap.set("n", "<leader>bc", ":BufferLinePickClose<CR>")
